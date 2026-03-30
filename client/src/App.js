@@ -384,10 +384,6 @@ function App() {
                 </div>
 
               )}
-
-
-
-
             </div>
           )}
 
