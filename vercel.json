@@ -7,15 +7,20 @@
       "config": {
         "distDir": "build"
       }
+    },
+    {
+      "src": "server/package.json",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/server/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/client/$1"
     }
-  ],
-  "installCommand": "cd client && npm install",
-  "buildCommand": "cd client && npm run build",
-  "outputDirectory": "client/build"
+  ]
 }
